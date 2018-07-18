@@ -7,8 +7,12 @@ $('button').click(() => {
     const x = $('#search').val();
     console.log(x);
     $.ajax({url:base_url + "search/movie?api_key=" + APIKEY+ "&query=" + x , success: function(result){
-            console.log(result)
-            console.log(result.results)
+            console.log(result);
+            console.log(result.results[0]);
+            console.log(result.results[0].title);
+            const src = image_url + result.results[0].poster_path;
+            console.log(src);
+            $('#data').append('<img src= src />');
         }
     });
 
