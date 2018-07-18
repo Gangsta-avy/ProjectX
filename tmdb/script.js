@@ -9,6 +9,7 @@ $('button').click(() => {
     $.ajax({url:base_url + "search/movie?api_key=" + APIKEY+ "&query=" + x , success: function(result){
             console.log(result)
             console.log(result.results)
+            $('#image').attr("src" , image_url+result.results[0].poster_path);
         }
     });
 
