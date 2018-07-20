@@ -5,23 +5,24 @@ const test = "https://api.themoviedb.org/3/movie/550?api_key=f6642a9e75698dbd0df
 
 $('button').click(() => {
     const x = $('#search').val();
+
     console.log(x);
-    $.ajax({url:base_url + "search/movie?api_key=" + APIKEY+ "&query=" + x , success: function(result){
+    $.ajax({url:base_url + "search/multi?api_key=" + APIKEY+ "&query=" + x , success: function(result){
 
-            console.log(result)
-            console.log(result.results)
-            $('#image').attr("src" , image_url+result.results[0].poster_path);
 
-           
 
+            console.log(result);
+            console.log(result.results);
+                if($('#profile').prop('checked')){
+                    $('#image').attr("src" , image_url+result.results[0].profile_path);
+
+                }
+                else if ($('#poster').prop('checked')){
+                    $('#image').attr("src" , image_url+result.results[0].poster_path);
+
+                }
         }
     });
 
 });
 
-/*
-$("button").click(function(){
-    $.ajax({url: base_url + "configuration?api_key=" + APIKEY, success: function(result){
-            console.log(result)
-        }});
-});*/

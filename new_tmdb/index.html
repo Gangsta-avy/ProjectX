@@ -200,7 +200,7 @@
             $("#message").on("click", ".result", function () {
                 var resourceId = $(this).attr("resourceId");
                 $.ajax({
-                    url: "https://api.themoviedb.org/3/person/" + resourceId + "?language=en-US",
+                    url: "https://api.themoviedb.org/3/multi/" + resourceId + "?language=en-US",
                     data: {
                         api_key: "3356865d41894a2fa9bfa84b2b5f59bb"
                     },
@@ -208,7 +208,7 @@
                     success: function (result, status, xhr) {
                         $("#modalTitleH4").html(result["name"]);
 
-                        var image = result["profile_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["profile_path"];
+                        var image = result["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
                         var biography = result["biography"] == null ? "No information available" : result["biography"];
 
                         var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + biography + "</p>";
