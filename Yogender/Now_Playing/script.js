@@ -1,10 +1,10 @@
+
 $(document).ready(function () {
+	callLatest(1);
     $("#reset").click(function (e) {
         location.reload();
     });
-    $(window).on('load',()=> {
-        callLatest(1)
-        });
+   
 
     $("#submit").click(function (e) {
         var validate = Validate();
