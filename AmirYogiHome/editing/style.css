@@ -103,39 +103,39 @@ body {
     font-size: 20px;
 }
 
-#apiDiv {
+.api {
     border: dashed 2px #CCC;
     padding: 10px;
     padding-left: 20px;
 }
 
-#apiDiv input, #apiDiv button {
+.api input, .api button {
     font-size: 25px;
     color: #000;
 }
 
-#apiDiv h4 {
+.api h4 {
     margin: 10px 0;
 }
 
-#apiDiv .imageDiv {
+.api .imageDiv {
     text-align: center;
 }
 
-#apiDiv .imageDiv img {
+.api .imageDiv img {
     display: none;
 }
 
-#apiDiv #message {
+.api .msg {
     padding-top: 10px;
 }
 
-#apiDiv #message .resultDiv {
+.api .msg .resultDiv {
     background: #FFF;
     display: inline-block;
 }
 
-#apiDiv #message .resultDiv > p {
+.api .msg .resultDiv > p {
     color: #000;
     display: inline-block;
     width: 95%;
@@ -143,7 +143,7 @@ body {
     border-bottom: double 2px #CCC;
 }
 
-#apiDiv #message .resultDiv .result {
+.api .msg .resultDiv .result {
     width: 23%;
     height: 400px;
     padding: 6px;
@@ -152,28 +152,25 @@ body {
     cursor: pointer;
 }
 
-#apiDiv #message .resultDiv .result img {
+.api .msg .resultDiv .result img {
     width: 75%;
 }
 
-#apiDiv #message .resultDiv .result p {
+.api .msg .resultDiv .result p {
     margin: 0;
 }
 
-#apiDiv #message .resultDiv .result p a {
+.api .msg .resultDiv .result p a {
     color: #808080;
     text-decoration: none;
     font-size: 20px;
     height: 100px;
 }
 
-#apiDiv #message .resultDiv .result p a:hover {
+.api .msg .resultDiv .result p a:hover {
     text-decoration: underline;
 }
 
-#myModal {
-    color: #000;
-}
 
 #reset {
     padding: 5px 10px;

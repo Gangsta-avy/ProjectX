@@ -1,12 +1,16 @@
 $(document).ready(function () {
+
+    callLatest(1);
     $('#searchInput').keyup( function (event) {
         if(event.keyCode==13){
             $('#submit').click();
         }
-    })
-    $('.container').hide();
+    });
+
+    $('.c1').hide();
     $('#submit').on('click', function () {
-        $('.container').show();
+        $('.c1').show();
+        $('.c2').hide();
     });
 
     $("#reset").click(function (e) {
@@ -21,7 +25,30 @@ $(document).ready(function () {
         }
     });
 
+    function callLatest(page){
+        var ajax1 = $.ajax({
+            url: "https://api.themoviedb.org/3/tv/on_the_air?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
+            data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
+            dataType: "json",
+            success: function (result, status, xhr) {
+                var resultHtml = $("<div class=\"resultDiv\"><p>Airing now</p>");
+                for (i = 0; i < result["results"].length; i++) {
 
+                    var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
+
+                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["name"] + "</a></p></div>")
+                }
+
+                resultHtml.append("</div>");
+                $("#message2").html(resultHtml);
+
+                Paging(result["total_pages"]);
+            },
+            error: function (xhr, status, error) {
+                $("#message2").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+            }
+        });
+    }
 
     $(document).ajaxStart(function () {
         $(".imageDiv img").show();
@@ -37,7 +64,7 @@ $(document).ready(function () {
             data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
             dataType: "json",
             success: function (result, status, xhr) {
-                var resultHtml = $("<div class=\"resultDiv\"><p>Names</p>");
+                var resultHtml = $("<div class=\"resultDiv\"><p>"+$('#searchInput').val()+"</p>");
                 for (i = 0; i < result["results"].length; i++) {
 
                     var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];

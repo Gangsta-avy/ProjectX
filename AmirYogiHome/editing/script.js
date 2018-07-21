@@ -1,4 +1,17 @@
 $(document).ready(function () {
+
+    callLatest(1);
+    $('#searchInput').keyup( function (event) {
+        if(event.keyCode==13){
+            $('#submit').click();
+        }
+    })
+    $('.c1').hide();
+    $('#submit').on('click', function () {
+        $('.c1').show();
+        $('.c2').hide();
+    });
+
     $("#reset").click(function (e) {
         location.reload();
     });
@@ -11,32 +24,30 @@ $(document).ready(function () {
         }
     });
 
-    $("#message").on("click", ".result", function () {
-        var resourceId = $(this).attr("resourceId");
-        $.ajax({
-            url: "https://api.themoviedb.org/3/multi/" + resourceId + "?language=en-US",
-            data: {
-                api_key: "3356865d41894a2fa9bfa84b2b5f59bb"
-            },
-            dataType: 'json',
+    function callLatest(page){
+        var ajax1 = $.ajax({
+            url: "https://api.themoviedb.org/3/movie/now_playing?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
+            data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
+            dataType: "json",
             success: function (result, status, xhr) {
-                $("#modalTitleH4").html(result["name"]);
+                var resultHtml = $("<div class=\"resultDiv\"><p>Now Playing in Theaters</p>");
+                for (i = 0; i < result["results"].length; i++) {
 
-                var image = result["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
-                var biography = result["biography"] == null ? "No information available" : result["biography"];
+                    var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
-                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + biography + "</p>";
-                resultHtml += "<p>Birdthday: " + result["birthday"] + "</p><p>Place of Birth: " + result["place_of_birth"] + "";
+                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["title"] + "</a></p></div>")
+                }
 
-                $("#modalBodyDiv").html(resultHtml)
+                resultHtml.append("</div>");
+                $("#message2").html(resultHtml);
 
-                $("#myModal").modal("show");
+                Paging(result["total_pages"]);
             },
             error: function (xhr, status, error) {
-                $("#message").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                $("#message2").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
             }
         });
-    });
+    }
 
     $(document).ajaxStart(function () {
         $(".imageDiv img").show();
@@ -52,12 +63,15 @@ $(document).ready(function () {
             data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
             dataType: "json",
             success: function (result, status, xhr) {
-                var resultHtml = $("<div class=\"resultDiv\"><p>Names</p>");
+                var resultHtml = $("<div class=\"resultDiv\"><p>"+$('#searchInput').val()+"</p>");
                 for (i = 0; i < result["results"].length; i++) {
 
-                    var image = result["results"][i]["profile_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["profile_path"];
+                    var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
-                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["name"] + "</a></p></div>")
+                    if(image !== "no-image.png"){
+                        resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["name"] + "</a></p></div>")
+
+                    }
                 }
 
                 resultHtml.append("</div>");
