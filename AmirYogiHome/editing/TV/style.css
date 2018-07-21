@@ -1,0 +1,188 @@
+body {
+    background: white no-repeat;
+
+}
+
+#navbox{
+    height: 60px;
+    width: 100%;
+    background-color: #00cccc;
+    position: sticky;
+    top: -1px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    text-align: center;
+    z-index: 10;
+
+
+}
+
+
+.btn {
+    background-color: #00cccc;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: RoyalBlue;
+}
+
+#logo{
+    height: 100px;
+    width: 100%;
+    background-color: #00B7FF;
+}
+
+#searchwrap{
+    height: 100px;
+    width: 100%;
+    background-color: wheat;
+}
+
+.search {
+    width: 60%;
+margin: auto;
+    font-size: 25px;
+}
+
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 50px;
+    margin-top: 25px;
+
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+    font-size: 25px;
+}
+
+.searchButton {
+    position: absolute;
+     margin-top: 25px;
+    width: 5%;
+    height: 50px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 90%;
+    position: sticky;
+    top: 59px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    color: whitesmoke;
+    font-size: 25px;
+    margin-top: 60px;
+}
+
+.container h3 {
+    font-size: 20px;
+}
+
+#apiDiv {
+    border: dashed 2px #CCC;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+#apiDiv input, #apiDiv button {
+    font-size: 25px;
+    color: #000;
+}
+
+#apiDiv h4 {
+    margin: 10px 0;
+}
+
+#apiDiv .imageDiv {
+    text-align: center;
+}
+
+#apiDiv .imageDiv img {
+    display: none;
+}
+
+#apiDiv #message {
+    padding-top: 10px;
+}
+
+#apiDiv #message .resultDiv {
+    background: #FFF;
+    display: inline-block;
+}
+
+#apiDiv #message .resultDiv > p {
+    color: #000;
+    display: inline-block;
+    width: 95%;
+    padding: 10px;
+    border-bottom: double 2px #CCC;
+}
+
+#apiDiv #message .resultDiv .result {
+    width: 23%;
+    height: 400px;
+    padding: 6px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+#apiDiv #message .resultDiv .result img {
+    width: 75%;
+}
+
+#apiDiv #message .resultDiv .result p {
+    margin: 0;
+}
+
+#apiDiv #message .resultDiv .result p a {
+    color: #808080;
+    text-decoration: none;
+    font-size: 20px;
+    height: 100px;
+}
+
+#apiDiv #message .resultDiv .result p a:hover {
+    text-decoration: underline;
+}
+
+#myModal {
+    color: #000;
+}
+
+#reset {
+    padding: 5px 10px;
+    background: #4CAF50;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
+#reset:hover {
+    color: #4CAF50;
+    background: #FFF;
+}

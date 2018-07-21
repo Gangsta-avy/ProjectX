@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Honset Reviews</title>
+    <link rel="icon" type="png" href="" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div id="logo"></div>
+<div  id="navbox">
+    <a href="#"><span class="btn">Home</span></a>
+    <a href="Movie/index.html"><span class="btn">Movie</span></a>
+    <a href="TV/index.html"><span class="btn">TV-Series</span></a>
+    <a href="Actor/index.html"><span class="btn">Actor</span></a>
+</div>
+<div class="container">
+    <div id="apiDiv" class="api">
+        <h4>Enter the Search Text and Press Submit Button</h4>
+        <input type="text" id="searchInput" placeholder="Search actor" />
+        <button id="submit">Submit</button>
+        <div class="imageDiv">
+            <img src="loading.gif" />
+        </div>
+        <div id="message">
+        </div>
+    </div>
+    <ul id="pagination"></ul>
+</div>
+
+<div class="container">
+    <button id="submit2">Submit</button>
+    <div id="apiDiv2" class="api">
+        <div class="imageDiv">
+            <img src="loading.gif" />
+        </div>
+        <div id="message2">
+        </div>
+    </div>
+    <ul id="pagination2"></ul>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery.twbsPagination.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
