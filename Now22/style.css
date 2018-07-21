@@ -1,0 +1,133 @@
+body {
+    background: #111 no-repeat;
+    background-image: -webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
+}
+
+#navbox{
+    height: 60px;
+    width: 100%;
+    background-color: #00cccc;
+    position: sticky;
+    top: -1px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+
+.btn {
+    background-color: #00cccc;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: RoyalBlue;
+}
+
+#logo{
+    height: 100px;
+    width: 100%;
+    background-color: #00B7FF;
+}
+#latest{
+    background-color: #862d59;
+    height: 400px;
+    width: 100%;
+}
+.container {
+    width: 960px;
+    margin: auto;
+    color: #FFF;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+.container h3 {
+    font-size: 20px;
+}
+
+.api {
+    border: dashed 2px #CCC;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.api input, .api button {
+    font-size: 25px;
+    color: #000;
+}
+
+.api h4 {
+    margin: 10px 0;
+}
+
+.api .imageDiv {
+    text-align: center;
+}
+
+.api .imageDiv img {
+    display: none;
+}
+
+.api .msg {
+    padding-top: 10px;
+}
+
+.api .msg .resultDiv {
+    background: #FFF;
+    display: inline-block;
+}
+
+.api .msg .resultDiv > p {
+    color: #000;
+    display: inline-block;
+    width: 95%;
+    padding: 10px;
+    border-bottom: double 2px #CCC;
+}
+
+.api .msg .resultDiv .result {
+    width: 23%;
+    height: 300px;
+    padding: 6px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.api .msg .resultDiv .result img {
+    width: 75%;
+}
+
+.api .msg .resultDiv .result p {
+    margin: 0;
+}
+
+.api .msg .resultDiv .result p a {
+    color: #808080;
+    text-decoration: none;
+    font-size: 20px;
+    height: 100px;
+}
+
+.api .msg .resultDiv .result p a:hover {
+    text-decoration: underline;
+}
+
+#reset {
+    padding: 5px 10px;
+    background: #4CAF50;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
+#reset:hover {
+    color: #4CAF50;
+    background: #FFF;
+}
