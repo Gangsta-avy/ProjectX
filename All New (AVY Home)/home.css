@@ -1,6 +1,6 @@
 body {
-    background: #111 no-repeat;
-    background-image: -webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
+    background: white no-repeat;
+
 }
 
 #navbox{
@@ -13,6 +13,8 @@ body {
     justify-content: space-evenly;
     font-size: 25px;
     text-align: center;
+    z-index: 10;
+
 
 }
 
@@ -34,51 +36,106 @@ body {
     width: 100%;
     background-color: #00B7FF;
 }
-.container {
-    width: 960px;
+
+#searchwrap{
+    height: 100px;
+    width: 100%;
+    background-color: wheat;
+    position: sticky;
+    top: 59px;
+}
+
+.search {
+    width: 60%;
     margin: auto;
-    color: #FFF;
     font-size: 25px;
-    margin-top: 40px;
+}
+
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 50px;
+    margin-top: 25px;
+
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+    font-size: 25px;
+}
+
+.searchButton {
+    position: absolute;
+    margin-top: 25px;
+    width: 5%;
+    height: 50px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    color: whitesmoke;
+    font-size: 25px;
+    margin-top: 60px;
 }
 
 .container h3 {
     font-size: 20px;
 }
 
-#apiDiv {
+.api {
     border: dashed 2px #CCC;
     padding: 10px;
     padding-left: 20px;
 }
 
-#apiDiv input, #apiDiv button {
+.api input, .api button {
     font-size: 25px;
     color: #000;
 }
 
-#apiDiv h4 {
+.api h4 {
     margin: 10px 0;
 }
 
-#apiDiv .imageDiv {
+.api .imageDiv {
     text-align: center;
 }
 
-#apiDiv .imageDiv img {
+.api .imageDiv img {
     display: none;
 }
 
-#apiDiv #message {
+.api .msg {
     padding-top: 10px;
 }
 
-#apiDiv #message .resultDiv {
+.api .msg .resultDiv {
     background: #FFF;
     display: inline-block;
 }
 
-#apiDiv #message .resultDiv > p {
+.api .msg .resultDiv > p {
     color: #000;
     display: inline-block;
     width: 95%;
@@ -86,37 +143,39 @@ body {
     border-bottom: double 2px #CCC;
 }
 
-#apiDiv #message .resultDiv .result {
+.api .msg .resultDiv .result {
     width: 23%;
-    height: 300px;
+    height: 400px;
     padding: 6px;
     float: left;
     text-align: center;
     cursor: pointer;
 }
 
-#apiDiv #message .resultDiv .result img {
+.api .msg .resultDiv .result img {
     width: 75%;
 }
 
-#apiDiv #message .resultDiv .result p {
+.api .msg .resultDiv .result p {
     margin: 0;
 }
 
-#apiDiv #message .resultDiv .result p a {
+.api .msg .resultDiv .result p a {
     color: #808080;
     text-decoration: none;
     font-size: 20px;
     height: 100px;
 }
 
-#apiDiv #message .resultDiv .result p a:hover {
+.api .msg .resultDiv .result p a:hover {
     text-decoration: underline;
 }
-
 #myModal {
-    color: darksalmon;
+    color: #000;
+    background-color: mediumspringgreen;
+
 }
+
 
 #reset {
     padding: 5px 10px;
