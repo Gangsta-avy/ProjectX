@@ -1,6 +1,6 @@
 body {
-    background: #111 no-repeat;
-    background-image: -webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
+    background: white no-repeat;
+
 }
 
 #navbox{
@@ -13,6 +13,8 @@ body {
     justify-content: space-evenly;
     font-size: 25px;
     text-align: center;
+    z-index: 10;
+
 
 }
 
@@ -35,48 +37,66 @@ body {
     background-color: #00B7FF;
 }
 
-/*h1 {*/
-    /*font-size: 24px;*/
-/*}*/
+#searchwrap{
+    height: 100px;
+    width: 100%;
+    background-color: wheat;
+    position: sticky;
+    top: 59px;
+}
 
-/*h2 {*/
-    /*font-size: 22px;*/
-/*}*/
+.search {
+    width: 60%;
+    margin: auto;
+    font-size: 25px;
+}
 
-/*h3 {*/
-    /*font-size: 20px;*/
-/*}*/
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 50px;
+    margin-top: 25px;
 
-/*h1, h2, h3 {*/
-    /*text-align: center;*/
-    /*color: #FFF;*/
-/*}*/
+    outline: none;
+    color: #9DBFAF;
+}
 
-/*h2 a {*/
-    /*color: #0184e3;*/
-    /*text-decoration: none;*/
-/*}*/
+.searchTerm:focus{
+    color: #00B4CC;
+    font-size: 25px;
+}
 
-/*h2 a:hover {*/
-    /*color: #0184e3;*/
-    /*text-decoration: underline;*/
-/*}*/
+.searchButton {
+    position: absolute;
+    margin-top: 25px;
+    width: 5%;
+    height: 50px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
 
-/*h3 a {*/
-    /*color: #00e8ff;*/
-    /*text-decoration: none;*/
-/*}*/
+    cursor: pointer;
+    font-size: 20px;
+}
 
-/*h3 a:hover {*/
-    /*color: #00e8ff;*/
-/*}*/
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
 
 .container {
-    width: 960px;
+    width: 90%;
     margin: auto;
-    color: #FFF;
+    color: whitesmoke;
     font-size: 25px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .container h3 {
@@ -125,7 +145,7 @@ body {
 
 #apiDiv #message .resultDiv .result {
     width: 23%;
-    height: 300px;
+    height: 400px;
     padding: 6px;
     float: left;
     text-align: center;

@@ -1,6 +1,6 @@
 body {
-    background: #111 no-repeat;
-    background-image: -webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
+    background: white no-repeat;
+
 }
 
 #navbox{
@@ -13,6 +13,8 @@ body {
     justify-content: space-evenly;
     font-size: 25px;
     text-align: center;
+    z-index: 10;
+
 
 }
 
@@ -34,56 +36,106 @@ body {
     width: 100%;
     background-color: #00B7FF;
 }
-#latest{
-    background-color: #862d59;
-    height: 400px;
+
+#searchwrap{
+    height: 100px;
     width: 100%;
+    background-color: wheat;
+    position: sticky;
+    top: 59px;
 }
-.container {
-    width: 960px;
+
+.search {
+    width: 60%;
     margin: auto;
-    color: #FFF;
     font-size: 25px;
-    margin-top: 40px;
+}
+
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 50px;
+    margin-top: 25px;
+
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+    font-size: 25px;
+}
+
+.searchButton {
+    position: absolute;
+    margin-top: 25px;
+    width: 5%;
+    height: 50px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    color: whitesmoke;
+    font-size: 25px;
+    margin-top: 60px;
 }
 
 .container h3 {
     font-size: 20px;
 }
 
-.api {
+#apiDiv {
     border: dashed 2px #CCC;
     padding: 10px;
     padding-left: 20px;
 }
 
-.api input, .api button {
+#apiDiv input, #apiDiv button {
     font-size: 25px;
     color: #000;
 }
 
-.api h4 {
+#apiDiv h4 {
     margin: 10px 0;
 }
 
-.api .imageDiv {
+#apiDiv .imageDiv {
     text-align: center;
 }
 
-.api .imageDiv img {
+#apiDiv .imageDiv img {
     display: none;
 }
 
-.api #message {
+#apiDiv #message {
     padding-top: 10px;
 }
 
-.api #message .resultDiv {
+#apiDiv #message .resultDiv {
     background: #FFF;
     display: inline-block;
 }
 
-.api #message .resultDiv > p {
+#apiDiv #message .resultDiv > p {
     color: #000;
     display: inline-block;
     width: 95%;
@@ -91,31 +143,31 @@ body {
     border-bottom: double 2px #CCC;
 }
 
-.api #message .resultDiv .result {
+#apiDiv #message .resultDiv .result {
     width: 23%;
-    height: 300px;
+    height: 400px;
     padding: 6px;
     float: left;
     text-align: center;
     cursor: pointer;
 }
 
-.api #message .resultDiv .result img {
+#apiDiv #message .resultDiv .result img {
     width: 75%;
 }
 
-.api #message .resultDiv .result p {
+#apiDiv #message .resultDiv .result p {
     margin: 0;
 }
 
-.api #message .resultDiv .result p a {
+#apiDiv #message .resultDiv .result p a {
     color: #808080;
     text-decoration: none;
     font-size: 20px;
     height: 100px;
 }
 
-.api #message .resultDiv .result p a:hover {
+#apiDiv #message .resultDiv .result p a:hover {
     text-decoration: underline;
 }
 
