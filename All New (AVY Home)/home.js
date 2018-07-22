@@ -53,11 +53,11 @@ $(document).ready(function () {
 
     function callLatest(page){
         var ajax1 = $.ajax({
-            url: "https://api.themoviedb.org/3/movie/now_playing?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
+            url: "https://api.themoviedb.org/3/movie/popular?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
             data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
             dataType: "json",
             success: function (result, status, xhr) {
-                var resultHtml = $("<div class=\"resultDiv\"><p>Now Playing in Theaters</p>");
+                var resultHtml = $("<div class=\"resultDiv\"><p>Popular movies right now</p>");
                 for (i = 0; i < result["results"].length; i++) {
 
                     var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
