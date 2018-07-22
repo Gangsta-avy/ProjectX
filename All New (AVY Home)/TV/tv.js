@@ -35,14 +35,15 @@ $(document).ready(function () {
                 $("#modalTitleH4").html(result["name"]);
 
                 var image = result["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
+                var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var overview = result["overview"] == null ? "No information available" : result["overview"];
-
-                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + overview + "</p>";
-                resultHtml += "<p>Popularity: " + result["popularity"] + "</p><p>Rating: " + result["vote_average"] + "";
+                var resultHtml = "<span class=\"text-center modimg\"><img align='left' width='300px' src=\"" + image + "\"/></span><strong><span class='modov'>" + overview + "</span></strong>";
+                resultHtml += "<strong><div>Popularity: " + result["popularity"] + "</div><div>AIR date: " + result["first_air_date"] + "</div><div>Rating: " + result["vote_average"]+"</div></strong>";
 
                 $("#modalBodyDiv").html(resultHtml)
-
                 $("#myModal").modal("show");
+                $("#myModal").css("background-image" , 'url("'+image1+'")');
+
             },
             error: function (xhr, status, error) {
                 $(".msg").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)

@@ -36,14 +36,16 @@ $(document).ready(function () {
                 $("#modalTitleH4").html(result["name"]);
 
                 var image = result["profile_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["profile_path"];
+                var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var biography = result["biography"] == null ? "No information available" : result["biography"];
+                var resultHtml = "<span class=\"text-center modimg\"><img align='left' width='300px' src=\"" + image + "\"/></span><strong><span class='modov'>" + biography + "</span></strong>";
+                resultHtml += "<strong><div>Birthday: " + result["birthday"] + "</div><div>Place of birth: " + result["place_of_birth"] + "</div><div>Popularity: " + result["popularity"]+"</div></strong>";
 
-                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + biography + "</p>";
-                resultHtml += "<p>Birdthday: " + result["birthday"] + "</p><p>Place of Birth: " + result["place_of_birth"] + "";
 
                 $("#modalBodyDiv").html(resultHtml)
-
                 $("#myModal").modal("show");
+                $("#myModal").css("background-image" , 'url("'+image1+'")');
+
             },
             error: function (xhr, status, error) {
                 $(".msg").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)

@@ -5,7 +5,7 @@ $(document).ready(function () {
         if(event.keyCode==13){
             $('#submit').click();
         }
-    })
+    });
     $('.c1').hide();
     $('#submit').on('click', function () {
         $('.c1').show();
