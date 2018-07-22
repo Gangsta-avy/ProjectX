@@ -28,7 +28,7 @@ $(document).ready(function () {
         $.ajax({
             url: "https://api.themoviedb.org/3/tv/" + resourceId + "?language=en-US",
             data: {
-                api_key: "3356865d41894a2fa9bfa84b2b5f59bb"
+                api_key: "eb4cda00c52a1c0b7c868aec79418356"
             },
             dataType: 'json',
             success: function (result, status, xhr) {
@@ -56,7 +56,7 @@ $(document).ready(function () {
     function callLatest(page){
         var ajax1 = $.ajax({
             url: "https://api.themoviedb.org/3/tv/on_the_air?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
-            data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
+            data: { "api_key": "eb4cda00c52a1c0b7c868aec79418356" },
             dataType: "json",
             success: function (result, status, xhr) {
                 var resultHtml = $("<div class=\"resultDiv\"><p>Airing now</p>");
@@ -89,7 +89,7 @@ $(document).ready(function () {
     function CallAPI(page) {
         $.ajax({
             url: "https://api.themoviedb.org/3/search/tv?language=en-US&query=" + $("#searchInput").val() + "&page=" + page + "&include_adult=false",
-            data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
+            data: { "api_key": "eb4cda00c52a1c0b7c868aec79418356" },
             dataType: "json",
             success: function (result, status, xhr) {
                 var resultHtml = $("<div class=\"resultDiv\"><p>"+$('#searchInput').val()+"</p>");
