@@ -37,11 +37,10 @@ $(document).ready(function () {
                 var image = result["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
                 var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var overview = result["overview"] == null ? "No information available" : result["overview"];
+                var resultHtml = "<span class=\"text-center modimg\"><img align='left' width='300px' src=\"" + image + "\"/></span><strong><span class='modov'>" + overview + "</span></strong>";
+                resultHtml += "<strong><div>Popularity: " + result["popularity"] + "</div><div>Release Date: " + result["release_date"] + "</div><div>Rating: " + result["vote_average"]+"</div><div>Budget: $" + result["budget"]+"</div><div>Grossing : $" + result["revenue"]+"</div></strong>";
 
-                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + overview + "</p>";
-                resultHtml += "<p>Popularity: " + result["popularity"] + "</p><p>Release Date: " + result["release_date"] + "";
-
-                $("#modalBodyDiv").html(resultHtml)
+                $("#modalBodyDiv").html(resultHtml);
                 $("#myModal").modal("show");
                 $("#myModal").css("background-image" , 'url("'+image1+'")');
 
