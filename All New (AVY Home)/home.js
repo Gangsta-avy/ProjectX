@@ -95,8 +95,14 @@ $(document).ready(function () {
                     var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
                     if(image !== "no-image.png"){
-                        resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["name"] + "</a></p></div>")
 
+                        if(result["results"][i]["name"]!==undefined) {
+                            resultHtml.append("<div id=\"id"+i+"\" class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["name"] + "</a></p></div>")
+                        }
+                        else if(result["results"][i]["original_title"]!==undefined){
+                            resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["original_title"] + "</a></p></div>")
+
+                        }
                     }
                 }
 
