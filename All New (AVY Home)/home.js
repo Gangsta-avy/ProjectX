@@ -35,14 +35,16 @@ $(document).ready(function () {
                 $("#modalTitleH4").html(result["original_title"]);
 
                 var image = result["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
+                var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var overview = result["overview"] == null ? "No information available" : result["overview"];
 
                 var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + overview + "</p>";
                 resultHtml += "<p>Popularity: " + result["popularity"] + "</p><p>Release Date: " + result["release_date"] + "";
 
                 $("#modalBodyDiv").html(resultHtml)
-
                 $("#myModal").modal("show");
+                $("#myModal").css("background-image" , 'url("'+image1+'")');
+
             },
             error: function (xhr, status, error) {
                 $(".msg").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
