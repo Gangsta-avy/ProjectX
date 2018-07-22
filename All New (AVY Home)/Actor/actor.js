@@ -38,11 +38,13 @@ $(document).ready(function () {
                 var image = result["profile_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["profile_path"];
                 var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var biography = result["biography"] == null ? "No information available" : result["biography"];
-                var resultHtml = "<span class=\"text-center modimg\"><img align='left' width='300px' src=\"" + image + "\"/></span><strong><span class='modov'>" + biography + "</span></strong>";
-                resultHtml += "<strong><div>Birthday: " + result["birthday"] + "</div><div>Place of birth: " + result["place_of_birth"] + "</div><div>Popularity: " + result["popularity"]+"</div></strong>";
+
+                var resultHtml = "<span><img align='left' width='300px' src=\"" + image + "\"/></span>";
+
+                $('.modimg').html(resultHtml);
+                $('.modov').html("<span><strong>Biography : </strong>" + biography + "</span><p></p><div><strong>Birthday: </strong>" + result["birthday"] + "</div><p></p><div><strong>Place of birth: </strong>" + result["place_of_birth"] + "</div><p></p><div><strong>Popularity: </strong>" + result["popularity"]+"</div>");
 
 
-                $("#modalBodyDiv").html(resultHtml)
                 $("#myModal").modal("show");
                 $("#myModal").css("background-image" , 'url("'+image1+'")');
 

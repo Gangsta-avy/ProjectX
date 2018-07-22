@@ -37,10 +37,13 @@ $(document).ready(function () {
                 var image = result["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
                 var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var overview = result["overview"] == null ? "No information available" : result["overview"];
-                var resultHtml = "<span class=\"text-center modimg\"><img align='left' width='300px' src=\"" + image + "\"/></span><strong><span class='modov'>" + overview + "</span></strong>";
-                resultHtml += "<strong><div>Popularity: " + result["popularity"] + "</div><div>Release Date: " + result["release_date"] + "</div><div>Rating: " + result["vote_average"]+"</div><div>Budget: $" + result["budget"]+"</div><div>Grossing : $" + result["revenue"]+"</div></strong>";
+                var resultHtml = "<span><img align='left' width='300px' src=\"" + image + "\"/></span>";
 
-                $("#modalBodyDiv").html(resultHtml);
+                $('.modimg').html(resultHtml);
+                $('.modov').html("<span><strong>Storyline: </strong>" + overview + "</span><p></p><div><strong>Popularity: </strong>" + result["popularity"] + "</div><p></p><div><strong>Release Date: </strong>" + result["release_date"] + "</div><p></p><div><strong>Rating: </strong>" + result["vote_average"]+"</div><p></p><div><strong>Budget: $</strong>" + result["budget"]+"</div><p></p><div><strong>Grossing : $</strong>" + result["revenue"]+"</div>");
+
+
+
                 $("#myModal").modal("show");
                 $("#myModal").css("background-image" , 'url("'+image1+'")');
 
@@ -53,11 +56,11 @@ $(document).ready(function () {
 
     function callLatest(page){
         var ajax1 = $.ajax({
-            url: "https://api.themoviedb.org/3/movie/popular?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
+            url: "https://api.themoviedb.org/3/movie/now_playing?" +"&language=en-US"+ "&page=" + page + "&include_adult=false",
             data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
             dataType: "json",
             success: function (result, status, xhr) {
-                var resultHtml = $("<div class=\"resultDiv\"><p>Popular movies right now</p>");
+                var resultHtml = $("<div class=\"resultDiv\"><p>Now Playing in Theaters</p>");
                 for (i = 0; i < result["results"].length; i++) {
 
                     var image = result["results"][i]["poster_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
@@ -86,7 +89,7 @@ $(document).ready(function () {
 
     function CallAPI(page) {
         $.ajax({
-            url: "https://api.themoviedb.org/3/search/multi?language=en-US&query=" + $("#searchInput").val() + "&page=" + page + "&include_adult=false",
+            url: "https://api.themoviedb.org/3/search/movie?language=en-US&query=" + $("#searchInput").val() + "&page=" + page + "&include_adult=false",
             data: { "api_key": "3356865d41894a2fa9bfa84b2b5f59bb" },
             dataType: "json",
             success: function (result, status, xhr) {

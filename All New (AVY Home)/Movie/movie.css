@@ -180,15 +180,28 @@ body {
     background-repeat:no-repeat ;
     background-size:cover ;
 }
+
 #modalBodyDiv{
+
+    display:grid;
+    font-size: 17px;
+
 }
+
 .modov {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     margin-left: 40px;
 
 }
 .modimg{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
-
 
 #reset {
     padding: 5px 10px;
