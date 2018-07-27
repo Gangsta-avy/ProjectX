@@ -14,10 +14,7 @@ body {
     font-size: 25px;
     text-align: center;
     z-index: 10;
-
-
 }
-
 
 .btn {
     background-color: #00cccc;
@@ -32,6 +29,7 @@ body {
 }
 
 #logo{
+    display: flex;
     height: 100px;
     width: 100%;
     background-color: #00B7FF;
@@ -149,11 +147,12 @@ body {
 
 .api .msg .resultDiv .result {
     width: 23%;
-    height: 400px;
+    height: 375px;
     padding: 6px;
     float: left;
     text-align: center;
     cursor: pointer;
+    margin:10px;
 }
 
 .api .msg .resultDiv .result img {
@@ -205,15 +204,154 @@ body {
 }
 
 
-#reset {
-    padding: 5px 10px;
-    background: #4CAF50;
-    border: none;
-    color: #FFF;
-    cursor: pointer;
+@media only screen and (max-width: 1200px){
+
+    .api .msg .resultDiv .result {
+        width: 30%;
+        height: 390px;
+        padding: 6px;
+    }
 }
 
-#reset:hover {
-    color: #4CAF50;
-    background: #FFF;
+
+@media only screen and (max-width: 1000px){
+
+    .api .msg .resultDiv .result {
+        width: 45%;
+        height: 450px;
+    }
+}
+
+
+@media only screen and (max-width: 900px){
+
+    .api .msg .resultDiv .result {
+        height: 380px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    .api .msg .resultDiv .result {
+        height: 360px;
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+
+    .searchButton {
+        width: 7%;
+        font-size: 20px;
+    }
+
+    .api .msg .resultDiv .result {
+        height: 335px;
+    }
+}
+
+
+@media only screen and (max-width: 675px) {
+
+    .api .msg .resultDiv .result {
+        width: 95%;
+        height: 550px;
+    }
+}
+
+@media only screen and (max-width: 630px){
+
+    .modov {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 10px;
+        margin-left: 2px;
+
+    }
+    .modimg{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .search {
+        width: 75%;
+        margin: auto;
+        font-size: 20px;
+    }
+
+    .searchButton {
+        width: 10%;
+        font-size: 20px;
+    }
+
+    .api .msg .resultDiv .result {
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    #logo{
+        background-image: url(back3small1.png);
+    }
+
+    .api .msg .resultDiv .result {
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .api .msg .resultDiv .result {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    #logo{
+        background-image: url(back3small2.png);
+    }
+
+    #navbox{
+        height: 52px;
+    }
+    #searchwrap{
+        top: 51px;
+    }
+
+    .btn {
+        padding: 12px 16px;
+        font-size: 20px;
+    }
+
+    .api .msg .resultDiv .result {
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    #navbox{
+        height: 50px;
+    }
+    #searchwrap{
+        top: 49px;
+    }
+    .btn {
+        padding: 12px 16px;
+        font-size: 17px;
+    }
+    .api .msg .resultDiv .result {
+        height: 330px;
+    }
 }

@@ -36,7 +36,7 @@ $(document).ready(function () {
                 $("#modalTitleH4").html(result["name"]);
 
                 var image = result["profile_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["profile_path"];
-                var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
+                // var image1 = result["backdrop_path"] == null ? "no-image.png" : "https://image.tmdb.org/t/p/original/" + result["backdrop_path"];
                 var biography = result["biography"] == null ? "No information available" : result["biography"];
 
                 var resultHtml = "<span><img align='left' width='300px' src=\"" + image + "\"/></span>";
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
 
                 $("#myModal").modal("show");
-                $("#myModal").css("background-image" , 'url("'+image1+'")');
+                // $("#myModal").css("background-image" , 'url("'+image1+'")');
 
             },
             error: function (xhr, status, error) {
